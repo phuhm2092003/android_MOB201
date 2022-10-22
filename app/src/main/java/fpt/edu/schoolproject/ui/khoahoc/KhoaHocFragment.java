@@ -12,7 +12,6 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.MediaController;
 import android.widget.VideoView;
 
 import fpt.edu.schoolproject.R;
@@ -43,15 +42,7 @@ public class KhoaHocFragment extends Fragment {
                 startActivity(intent);
             }
         });
-        loadVideo();
         return view;
-    }
-
-    private void loadVideo() {
-        Uri uri = Uri.parse("android.resource://"+requireContext().getPackageName()+"/"+R.raw.video);
-        videoView.setVideoURI(uri);
-//        videoView.setMediaController(new MediaController(getContext()));
-        videoView.start();
     }
 
     private void initView(View view) {
@@ -64,6 +55,5 @@ public class KhoaHocFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        loadVideo();
     }
 }
