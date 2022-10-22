@@ -42,8 +42,6 @@ public class KhoaHocFragment extends Fragment {
                 startActivity(intent);
             }
         });
-        loadMediaVideo();
-
         return view;
     }
 
@@ -54,15 +52,8 @@ public class KhoaHocFragment extends Fragment {
         videoView = view.findViewById(R.id.videoView);
     }
 
-    private void loadMediaVideo() {
-        Uri pathUri = Uri.parse("android.resource://" + requireContext().getPackageName() + "/" + R.raw.video);
-        videoView.setVideoURI(pathUri);
-        videoView.start();
-    }
-
     @Override
     public void onResume() {
         super.onResume();
-        loadMediaVideo();
     }
 }
