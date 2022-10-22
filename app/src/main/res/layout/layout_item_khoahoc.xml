@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    app:cardCornerRadius="16dp"
+    android:layout_height="wrap_content"
+    >
+
+    <RelativeLayout
+        android:background="#4DDCDCDC"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            app:srcCompat="@drawable/ic_khoahoc_item" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/imageView5"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTenKhoaHoc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_bold"
+                android:gravity="center"
+                android:text="@string/android_n_ng_cao"
+                android:textColor="@color/colorText"
+                android:textSize="19sp" />
+
+            <TextView
+                android:id="@+id/tvGiaKhoaHoc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="center_vertical"
+                android:text="50000"
+                android:textColor="@color/red"
+                android:textSize="17sp"
+                app:drawableStartCompat="@drawable/ic_gia"
+                tools:ignore="HardcodedText" />
+
+            <Button
+                android:id="@+id/btnTrangThai"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bgr_btn_dang_ky"
+                android:fontFamily="@font/inter_regular"
+                android:text="@string/ng_k_kho_h_c"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

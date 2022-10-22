@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="BottomNavigationViewTextStyle">
+        <item name="android:fontFamily">@font/inter_regular</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <!--    font family toolbar-->
+    <style name="fontFamilyToolbar" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:fontFamily">@font/inter_regular</item>
+        <item name="android:textSize">19sp</item>
+    </style>
+    <!--    end-->
+    <style name="statusBarWhite" parent="Theme.SchoolProject">
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
+    </style>
+</resources>

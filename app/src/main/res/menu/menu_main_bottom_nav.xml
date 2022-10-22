@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/khoa_hoc"
+        android:icon="@drawable/ic_khoahoc"
+        android:title="@string/khoa_hoc"/>
+    <item android:id="@+id/tin_tuc"
+        android:icon="@drawable/ic_tintuc"
+        android:title="@string/tin_tuc"/>
+
+    <item
+        android:id="@+id/ban_do"
+        android:icon="@drawable/ic_maps"
+        android:title="@string/ban_do"/>
+
+    <item android:id="@+id/xa_hoi"
+        android:icon="@drawable/ic_social"
+        android:title="@string/xa_hoi"/>
+
+</menu>
