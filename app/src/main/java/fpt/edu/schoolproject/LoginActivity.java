@@ -26,6 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     TextInputLayout tilUserName, tilPassword;
     UserDao userDao;
     IntentFilter intentFilter;
+    CheckBox chkRemember;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         signIn = findViewById(R.id.btnSignIn);
         tilUserName = findViewById(R.id.tilUserName);
         tilPassword = findViewById(R.id.tilUserPassword);
+        chkRemember = findViewById(R.id.chkRememberUser);
         loginFb = findViewById(R.id.btnSignInFb);
         userDao = new UserDao(this);
 
