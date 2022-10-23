@@ -11,9 +11,11 @@ import android.content.IntentFilter;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.facebook.AccessToken;
@@ -25,6 +27,8 @@ import com.facebook.GraphResponse;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.textfield.TextInputLayout;
 
 import org.json.JSONException;
@@ -42,6 +46,7 @@ public class LoginActivity extends AppCompatActivity {
     UserDao userDao;
     IntentFilter intentFilter;
     CallbackManager callbackManager;
+    TextView tvRegister;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +56,7 @@ public class LoginActivity extends AppCompatActivity {
         tilUserName = findViewById(R.id.tilUserName);
         tilPassword = findViewById(R.id.tilUserPassword);
         loginFb = findViewById(R.id.btnSignInFb);
+        tvRegister = findViewById(R.id.tvDangKy);
         callbackManager = CallbackManager.Factory.create();
         userDao = new UserDao(this);
 
@@ -103,6 +109,20 @@ public class LoginActivity extends AppCompatActivity {
                 LoginManager.getInstance().logInWithReadPermissions(LoginActivity.this, Arrays.asList("public_profile"));
             }
         });
+
+        tvRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(LoginActivity.this, "Đăng ký thành công", Toast.LENGTH_SHORT).show();
+                startScreenRegister();
+            }
+        });
+    }
+
+    private void startScreenRegister() {
+        Intent intent = new Intent(LoginActivity.this, RegisterUserActivity.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.anim_in_right, R.anim.anim_out_left);
     }
 
     private void startScreenWelcome() {

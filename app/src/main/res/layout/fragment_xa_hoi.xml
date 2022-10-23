@@ -90,7 +90,6 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="@drawable/bgr_btn_rd5_teal1"
-            android:backgroundTint="@color/colorTeal1"
             android:fontFamily="@font/inter_bold"
             android:text="Chia sẻ"
             android:textSize="15sp"

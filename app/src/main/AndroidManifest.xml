@@ -18,6 +18,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SchoolProject"
         tools:targetApi="31">
+        <activity
+            android:theme="@style/statusBarWhite"
+            android:name=".RegisterUserActivity"
+            android:exported="false" />
+
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />

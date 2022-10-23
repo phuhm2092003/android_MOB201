@@ -19,4 +19,5 @@
     <string name="facebook_client_token">cce18c9cb6b070b1ac83bb205ce33bbc</string>
     <string name="setting">Setting</string>
     <string name="dang_xuat">Đăng xuất</string>
+    <string name="dang_ky_tai_khoan">Đăng ký tài khoản</string>
 </resources>
