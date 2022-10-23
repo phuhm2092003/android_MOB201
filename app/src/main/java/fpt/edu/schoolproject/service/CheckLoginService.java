@@ -28,6 +28,7 @@ public class CheckLoginService extends Service {
             Toast.makeText(this, "Vui lòng nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();
         }else {
             UserDao userDao = new UserDao(getApplicationContext());
+            Log.i("TAG", "user size: "+userDao.getAll().size());
             boolean checkLogin = userDao.checkLogin(username, password);
             senData(checkLogin);
         }
