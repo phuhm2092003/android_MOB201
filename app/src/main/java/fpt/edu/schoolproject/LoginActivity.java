@@ -3,10 +3,12 @@ package fpt.edu.schoolproject;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,8 +16,21 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Toast;
 
+import com.facebook.AccessToken;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
+import com.facebook.login.LoginManager;
+import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
 import com.google.android.material.textfield.TextInputLayout;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.Arrays;
 import java.util.Objects;
 import fpt.edu.schoolproject.dao.UserDao;
 import fpt.edu.schoolproject.notification.MyNotification;
@@ -26,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
     TextInputLayout tilUserName, tilPassword;
     UserDao userDao;
     IntentFilter intentFilter;
-
+    CallbackManager callbackManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +51,7 @@ public class LoginActivity extends AppCompatActivity {
         tilUserName = findViewById(R.id.tilUserName);
         tilPassword = findViewById(R.id.tilUserPassword);
         loginFb = findViewById(R.id.btnSignInFb);
+        callbackManager = CallbackManager.Factory.create();
         userDao = new UserDao(this);
 
         skip.setOnClickListener(new View.OnClickListener() {
@@ -57,11 +73,34 @@ public class LoginActivity extends AppCompatActivity {
                 startService(myIntent);
             }
         });
+        // đăng nhập facbook
+        LoginManager.getInstance().registerCallback(callbackManager,
+                new FacebookCallback<LoginResult>() {
+                    @Override
+                    public void onSuccess(LoginResult loginResult) {
+                        // App code
+                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                        Toast.makeText(LoginActivity.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
+                        MyNotification.checkSDK(LoginActivity.this);
+                        MyNotification.getNotification(LoginActivity.this, "Đăng nhập hệ thống bằng Facebook thành công");
+                        finish();
+                    }
+
+                    @Override
+                    public void onCancel() {
+                        // App code
+                    }
+
+                    @Override
+                    public void onError(FacebookException exception) {
+                        // App code
+                    }
+                });
 
         loginFb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(LoginActivity.this, "Đăng nhập fb thành công", Toast.LENGTH_SHORT).show();
+                LoginManager.getInstance().logInWithReadPermissions(LoginActivity.this, Arrays.asList("public_profile"));
             }
         });
     }
@@ -114,6 +153,11 @@ public class LoginActivity extends AppCompatActivity {
             }
         }
     };
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        callbackManager.onActivityResult(requestCode, resultCode, data);
+        super.onActivityResult(requestCode, resultCode, data);
+    }
 
 
 }
