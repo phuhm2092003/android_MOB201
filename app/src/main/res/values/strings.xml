@@ -15,5 +15,6 @@
     <string name="facebook">Facebook</string>
     <string name="android_n_ng_cao">Android nâng cao</string>
     <string name="ng_k_kho_h_c">Đăng ký khoá học</string>
-
+    <string name="facebook_app_id">1344903816250059</string>
+    <string name="facebook_client_token">cce18c9cb6b070b1ac83bb205ce33bbc</string>
 </resources>
