@@ -34,7 +34,7 @@ public class DangKyKhoaHocService extends Service {
             MyNotification.checkSDK(this);
             MyNotification.getNotification(this, "Đăng ký khoá học thành công");
         }else {
-            // đã đăngkys
+            // huỷ đăng ký
             khoaHoc.setTrangThai(1);
             MyNotification.checkSDK(this);
             MyNotification.getNotification(this, "Huỷ khoá học thành công");
