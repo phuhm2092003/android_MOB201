@@ -1,10 +1,12 @@
-package fpt.edu.schoolproject;
+package fpt.edu.schoolproject.ui.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import fpt.edu.schoolproject.R;
 
 public class WelcomeActivity extends AppCompatActivity {
 

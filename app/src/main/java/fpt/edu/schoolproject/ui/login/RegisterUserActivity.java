@@ -1,4 +1,4 @@
-package fpt.edu.schoolproject;
+package fpt.edu.schoolproject.ui.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,6 +12,7 @@ import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.Objects;
 
+import fpt.edu.schoolproject.R;
 import fpt.edu.schoolproject.dao.UserDao;
 import fpt.edu.schoolproject.model.User;
 import fpt.edu.schoolproject.notification.MyNotification;

@@ -20,7 +20,7 @@
         tools:targetApi="31">
         <activity
             android:theme="@style/statusBarWhite"
-            android:name=".RegisterUserActivity"
+            android:name=".ui.login.RegisterUserActivity"
             android:exported="false" />
 
         <meta-data
@@ -39,7 +39,7 @@
             android:exported="false"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".ui.login.LoginActivity"
             android:exported="false"
             android:theme="@style/statusBarWhite" />
 
@@ -64,7 +64,7 @@
             android:name=".ui.news.WebviewActivity"
             android:exported="false" />
         <activity
-            android:name=".WelcomeActivity"
+            android:name=".ui.login.WelcomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

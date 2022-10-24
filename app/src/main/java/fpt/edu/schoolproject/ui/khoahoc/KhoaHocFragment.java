@@ -12,7 +12,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -20,12 +19,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.MediaController;
 import android.widget.VideoView;
 
-import java.util.Objects;
-
-import fpt.edu.schoolproject.LoginActivity;
+import fpt.edu.schoolproject.ui.login.LoginActivity;
 import fpt.edu.schoolproject.R;
 
 public class KhoaHocFragment extends Fragment {
