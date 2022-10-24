@@ -152,6 +152,7 @@ public class LoginActivity extends AppCompatActivity {
                 boolean check = bundle.getBoolean("BUNDLE_CHECK");
                 if(check){
                     context.startActivity(new Intent(context, MainActivity.class));
+                    overridePendingTransition(R.anim.anim_in_right, R.anim.anim_out_left);
                     Toast.makeText(context, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
                     MyNotification.checkSDK(context);
                     MyNotification.getNotification(context, "Đăng nhập hệ thống thành công");

@@ -43,6 +43,7 @@ public class RegisterUserActivity extends AppCompatActivity {
                     Toast.makeText(RegisterUserActivity.this, "Vui lòng nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();
                 }else {
                     if(userDao.insertUser(new User(userName, fullName, passwords))){
+                        learText();
                         notifiRegister();
                     }else {
                         Toast.makeText(RegisterUserActivity.this, "Tên đăng nhập tồn tại", Toast.LENGTH_SHORT).show();
@@ -50,6 +51,12 @@ public class RegisterUserActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void learText() {
+        Objects.requireNonNull(username.getEditText()).setText("");
+        Objects.requireNonNull(fullname.getEditText()).setText("");
+        Objects.requireNonNull(password.getEditText()).setText("");
     }
 
     private void notifiRegister() {
