@@ -28,9 +28,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
-        SchoolDB schoolDB = new SchoolDB(MainActivity.this);
-        SQLiteDatabase sqLiteDatabase = schoolDB.getReadableDatabase();
-        sqLiteDatabase.close();
+//        SchoolDB schoolDB = new SchoolDB(MainActivity.this);
+//        SQLiteDatabase sqLiteDatabase = schoolDB.getReadableDatabase();
+//        sqLiteDatabase.close();
         adapter = new ViewPagerAdapter(this);
         vpMain.setAdapter(adapter);
         bnvMenu.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
