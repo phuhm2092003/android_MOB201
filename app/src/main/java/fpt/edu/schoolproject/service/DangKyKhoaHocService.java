@@ -31,13 +31,11 @@ public class DangKyKhoaHocService extends Service {
         if(khoaHoc.getTrangThai() == 1){
             // chưa đăng ký
             khoaHoc.setTrangThai(0);
-            MyNotification.checkSDK(this);
-            MyNotification.getNotification(this, "Đăng ký khoá học thành công");
+            notifiSystem("Đăng ký khoá học thành công");
         }else {
             // đã đăngkys
             khoaHoc.setTrangThai(1);
-            MyNotification.checkSDK(this);
-            MyNotification.getNotification(this, "Huỷ khoá học thành công");
+            notifiSystem("Huỷ khoá học thành công");
         }
         boolean check = khoaHocDao.updateKhoaHoc(khoaHoc);
 
@@ -50,6 +48,11 @@ public class DangKyKhoaHocService extends Service {
         sendBroadcast(intentBR);
         stopSelf();
         return super.onStartCommand(intent, flags, startId);
+    }
+
+    private void notifiSystem(String s) {
+        MyNotification.checkSDK(this);
+        MyNotification.getNotification(this, s);
     }
 
     @Override

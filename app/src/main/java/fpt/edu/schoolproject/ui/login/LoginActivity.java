@@ -75,6 +75,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onSuccess(LoginResult loginResult) {
                         // App code
                         startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                        overridePendingTransition(R.anim.anim_in_right, R.anim.anim_out_left);
                         Toast.makeText(LoginActivity.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
                         MyNotification.checkSDK(LoginActivity.this);
                         MyNotification.getNotification(LoginActivity.this, "Đăng nhập hệ thống bằng Facebook thành công");

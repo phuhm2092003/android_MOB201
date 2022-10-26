@@ -19,6 +19,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.MediaController;
 import android.widget.VideoView;
 
 import fpt.edu.schoolproject.ui.login.LoginActivity;
@@ -57,7 +58,7 @@ public class KhoaHocFragment extends Fragment {
     private void loadVideo() {
         Uri uri = Uri.parse("android.resource://"+requireContext().getPackageName()+"/"+R.raw.video);
         videoView.setVideoURI(uri);
-//        videoView.setMediaController(new MediaController(getContext()));
+        videoView.setMediaController(new MediaController(getContext()));
         videoView.start();
     }
 

@@ -14,6 +14,7 @@ import java.util.Date;
 import fpt.edu.schoolproject.R;
 
 public class MyNotification {
+    public static final String CHANNEL_ID = "Fpt School";
     public static void checkSDK(Context context){
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
             NotificationChannel channel = new NotificationChannel("Fpt School", "Fpt School", NotificationManager.IMPORTANCE_DEFAULT);
@@ -22,7 +23,7 @@ public class MyNotification {
         }
     }
     public static void getNotification(Context context, String strNotification){
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "Fpt School");
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID);
         builder.setContentTitle("FPT School");
         builder.setContentText(strNotification);
         builder.setColor(context.getResources().getColor(R.color.red));
